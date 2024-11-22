@@ -1,0 +1,14 @@
+1) Ho messo un firewall tra il router e internet in modo da filtrare il traffico in uscita ed entrata.
+2) Il server SMTP potrà ricevere pacchetti solo dalla porta 23
+3) Il server HTTP potrà ricevere pacchetti dalla porta 80 e 443
+NB: Configurando i server in questa maniera sto gia filtrando protocolli di rete vulnerabili o sfruttabili dagli attaccanti
+
+4) Una volta che ho configurato i server (HTTP e SMTP) il router dovrebbe ricevere pacchetti in entrata sicuri, dico dovrebbe perché nulla è mai certo ecco perché aggiungo un DMZ tra il Router e la reta interna.
+5) Il DMZ Network si preoccuperà di filtrare nuovamente i pacchetti per scovare qualche problema se esistente.
+NB: La rete interna è composta da due switch e un NAS (dove vengono salvati tutti i dati più importanti).
+
+7) Lo switch 1 sarà dedicato ai dipendenti. I quali possono accedere a Internet senza problemi.
+8) Lo switch 2 sarà dedicato agli amministratori. I quali possono comunicare solamente tramite rete interna. Lo switch 2 non può accedere a Internet
+9) Il NAS ovviamente non sarà collegato a Internet e l'unico modo per accedervi è tramite accesso remoto degli amministratori.
+NB: Se un amministratore volesse collegarsi a Internet dovrebbe collegarsi allo switch dei dipendenti o in caso di una rete più grande a uno switch alternativo in modo da non mettere a rischio la sicurezza dei server e la sicurezza della rete interna.
+ 
